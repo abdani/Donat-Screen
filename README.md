@@ -10,8 +10,9 @@
 </p>
 
 <p align="center">
-  <a href="../../releases/latest"><b>Download the latest release</b></a> ·
-  one ~100 KB <code>.exe</code>, nothing to install · Windows 10/11
+  A tiny Windows screenshot tool with fully customizable save folders.<br>
+  <b>Snap. Pick a folder. Done.</b><br>
+  <sub>In a hurry? Press <kbd>Esc</kbd> to save to your default folder.</sub>
 </p>
 
 ![Settings](docs/images/settings.png)

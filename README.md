@@ -5,8 +5,8 @@
 <h1 align="center">Donat Screen</h1>
 
 <p align="center">
-  A tiny, portable screenshot tool for Windows that lives in the tray.<br>
-  Press a hotkey, pick an area, and the shot is on your clipboard and saved where you want it.
+  A tiny Windows screenshot tool with fully customizable save folders.
+  Snap. Pick a folder. Done.
 </p>
 
 <p align="center">

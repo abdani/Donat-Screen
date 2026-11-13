@@ -38,12 +38,72 @@
 | --- | --- |
 | ![Area picker](docs/images/overlay.png) | ![Save popup](docs/images/save-dialog.png) |
 
+| The hint when the picker opens | Recording a shortcut: Windows' own ones are refused |
+| --- | --- |
+| ![Area picker hint](docs/images/overlay-hint.png) | ![Recording a shortcut](docs/images/recording.png) |
+
 <details>
 <summary>Bahasa Indonesia</summary>
 
 ![Settings in Indonesian](docs/images/settings-id.png)
 
 </details>
+
+## Features in detail
+
+### Capturing
+- **Area** (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>2</kbd>): the whole desktop is frozen the moment you press the hotkey, so open menus and tooltips stay as they were. Drag to select; the size in pixels follows the selection. A click without dragging takes the monitor under the cursor. <kbd>Esc</kbd> or a right-click cancels.
+- **Full screen** (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>1</kbd>): all monitors in one image.
+- Shots are lossless PNG files named `DonatScreen_YYYYMMDD_HHMMSS_mmm.png`.
+
+### After the capture
+- The image is on the **clipboard** right away, before any question: as a bitmap (Word, Excel, PowerPoint, Paint, chat apps) and as PNG (browsers, Google Docs, GIMP).
+- The **save popup** opens on the monitor you're working on: preview, file name (`.png` is added for you), and the folders to tick. <kbd>Enter</kbd> saves to every ticked folder; <kbd>Esc</kbd> or closing it saves to the ★ folder with the automatic name. Names that Windows can't store (`a:b`, `CON`, …) are refused with a message.
+- Turn off **Ask for folder and file name** to skip the popup and save straight to the ★ folder.
+- A **notification** says where the file went; click it to show the file in Explorer. If the clipboard is busy in another app, or a folder can't be written, the notification says so and the other copies are still saved.
+
+### Save folders
+- The list holds as many folders as you like (it scrolls after five). The ★ marks the default, which is always offered; the check box decides whether a folder appears in the popup.
+- Per folder: open it, make it the default, or remove it from the list (its files are never touched). Click the path line to type or paste a new location: <kbd>Enter</kbd> applies, <kbd>Esc</kbd> reverts, and a missing or duplicate folder is refused.
+- The first run starts with `Pictures\Donat Screen`. Folders inside the app's own folder are stored relative to it, so the whole thing can live on a USB stick.
+
+### Shortcuts
+- Click a shortcut box and press the new combination; <kbd>Esc</kbd> stops recording. While you record, both hotkeys are paused and every key is swallowed, so <kbd>Win</kbd> combinations don't fire.
+- A combination is refused when it is:
+  - a Windows shortcut (<kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>, <kbd>Win</kbd>+digits or arrows, <kbd>Alt</kbd>+<kbd>PrtSc</kbd>, …) or <kbd>Win</kbd> plus a single key;
+  - fewer than two of <kbd>Ctrl</kbd>/<kbd>Alt</kbd>/<kbd>Shift</kbd> without <kbd>Win</kbd> (these clash with app shortcuts), except <kbd>F13</kbd>–<kbd>F24</kbd>, <kbd>PrtSc</kbd>, <kbd>Pause</kbd> and <kbd>Scroll Lock</kbd>;
+  - <kbd>PrtSc</kbd> while Windows gives that key to the Snipping Tool (the message tells you where to turn that off);
+  - already held by another app, or used for the other capture.
+- If a saved hotkey is taken by another app at startup, a notification says which one; the other hotkey keeps working.
+
+### Tray and startup
+- Left-click the tray icon for Settings. Right-click for **Capture area**, **Capture full screen**, **Open default folder**, **Settings** and **Quit**.
+- Only one copy runs; starting it again opens its Settings.
+- **Start with Windows** adds a per-user entry (no admin rights) that starts quietly in the tray. If you move the exe, the entry follows it on the next start.
+
+### Settings file
+Everything is kept in `DonatScreen.ini` next to the exe:
+
+```ini
+Dest=1|Screenshots
+Dest=0|D:\Work\Reports
+Default=0
+Ask=1
+RegionKey=D2, Shift, Control
+FullKey=D1, Shift, Control
+Lang=en
+```
+
+- `Dest=<1 or 0>|<folder>`: one line per save folder. `1` means it is offered in the popup. The folder is relative to the exe, or absolute.
+- `Default`: which `Dest` line is the ★ folder, counting from 0.
+- `Ask`: `1` shows the save popup, `0` saves straight away.
+- `RegionKey` / `FullKey`: the hotkeys; a `Win` combination gets an extra `, Win`.
+- `Lang`: `en` or `id`.
+
+The ini has no comment syntax; Settings writes it for you, so editing it by hand is rarely needed.
+
+### Privacy
+Donat Screen never connects to the internet: no updates, no telemetry. Screenshots only go to the clipboard and the folders you choose.
 
 ## Usage
 

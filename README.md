@@ -6,6 +6,7 @@
 
 <p align="center">
   A tiny Windows screenshot tool with fully customizable save folders.
+  
   Snap. Pick a folder. Done.
 </p>
 

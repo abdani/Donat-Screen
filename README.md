@@ -6,11 +6,6 @@
 
 <p align="center">
   A tiny Windows screenshot tool with fully customizable save folders.<br>
-  <b>Snap. Pick a folder. Done.</b>
-</p>
-
-<p align="center">
-  A tiny Windows screenshot tool with fully customizable save folders.<br>
   <b>Snap. Pick a folder. Done.</b><br>
   <sub>In a hurry? Press <kbd>Esc</kbd> to save to your default folder.</sub>
 </p>

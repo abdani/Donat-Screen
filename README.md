@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/images/icon.png" alt="" width="128">
+  <a href="https://abdani.github.io/Donat-Screen/"><img src="docs/images/social-preview.png" alt="Donat Screen — portable screenshot tool for Windows"></a>
 </p>
 
 <h1 align="center">Donat Screen</h1>
@@ -10,7 +10,20 @@
   <sub>In a hurry? Press <kbd>Esc</kbd> to save to your default folder.</sub>
 </p>
 
-![Settings](docs/images/settings.png)
+<p align="center">
+  <img alt="Windows 10/11" src="https://img.shields.io/badge/Windows-10%20%7C%2011-0078D4?style=for-the-badge&logo=windows11&logoColor=white">
+  <img alt="C# .NET Framework 4.8" src="https://img.shields.io/badge/C%23-.NET%204.8-512BD4?style=for-the-badge&logo=dotnet&logoColor=white">
+  <img alt="One 100 KB exe" src="https://img.shields.io/badge/one%20exe-~100%20KB-E5484D?style=for-the-badge">
+  <img alt="MIT License" src="https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge">
+</p>
+
+<p align="center">
+  <a href="https://abdani.github.io/Donat-Screen/"><b>🌐 Homepage</b></a> ·
+  <a href="../../releases/latest/download/DonatScreen.exe"><b>⬇ Download DonatScreen.exe</b></a> ·
+  nothing to install · no internet, no telemetry
+</p>
+
+![Donat Screen: settings, save popup and shortcut recording](docs/images/hero.png)
 
 ## Features
 
@@ -46,6 +59,9 @@ When the area picker opens, the screen dims and this hint shows at the top:
 </details>
 
 ## Features in detail
+
+<details>
+<summary><b>Show all details</b> — capturing, saving, folders, shortcuts, tray, settings file, privacy</summary>
 
 ### Capturing
 - **Area** (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>2</kbd>): the whole desktop is frozen the moment you press the hotkey, so open menus and tooltips stay as they were. Drag to select; the size in pixels follows the selection. A click without dragging takes the monitor under the cursor. <kbd>Esc</kbd> or a right-click cancels.
@@ -100,6 +116,8 @@ The ini has no comment syntax; Settings writes it for you, so editing it by hand
 
 ### Privacy
 Donat Screen never connects to the internet: no updates, no telemetry. Screenshots only go to the clipboard and the folders you choose.
+
+</details>
 
 ## Usage
 

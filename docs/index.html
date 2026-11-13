@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Donat Screen – free portable screenshot tool for Windows</title>
+<meta name="description" content="Donat Screen is a tiny, free and portable screenshot tool for Windows 10 and 11 with fully customizable save folders. Snap, pick a folder, done: the shot is on your clipboard and saved where you want it. One 100 KB exe, no install, no internet.">
+<meta name="keywords" content="screenshot tool, Windows screenshot, portable screenshot, snipping tool alternative, screen capture, clipboard, tray app, free, open source">
+<meta name="author" content="Dani Abdani">
+<link rel="canonical" href="https://abdani.github.io/Donat-Screen/">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dani Abdani">
+<meta property="og:title" content="Donat Screen – free portable screenshot tool for Windows">
+<meta property="og:description" content="Donat Screen is a tiny, free and portable screenshot tool for Windows 10 and 11 with fully customizable save folders. Snap, pick a folder, done: the shot is on your clipboard and saved where you want it. One 100 KB exe, no install, no internet.">
+<meta property="og:url" content="https://abdani.github.io/Donat-Screen/">
+<meta property="og:image" content="https://abdani.github.io/Donat-Screen/images/social-preview.png">
+<meta property="og:image:width" content="1280"><meta property="og:image:height" content="640">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#e5484d">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "SoftwareApplication",
+ "name": "Donat Screen",
+ "softwareVersion": "1.1.0",
+ "operatingSystem": "Windows 10, Windows 11",
+ "applicationCategory": "UtilitiesApplication",
+ "description": "Donat Screen is a tiny, free and portable screenshot tool for Windows 10 and 11 with fully customizable save folders. Snap, pick a folder, done: the shot is on your clipboard and saved where you want it. One 100 KB exe, no install, no internet.",
+ "offers": {
+  "@type": "Offer",
+  "price": "0",
+  "priceCurrency": "USD"
+ },
+ "downloadUrl": "https://github.com/abdani/Donat-Screen/releases/latest/download/DonatScreen.exe",
+ "image": "https://abdani.github.io/Donat-Screen/images/social-preview.png",
+ "screenshot": "https://abdani.github.io/Donat-Screen/images/settings.png",
+ "author": {
+  "@type": "Person",
+  "name": "Dani Abdani",
+  "url": "https://abdani.github.io/"
+ },
+ "license": "https://opensource.org/licenses/MIT",
+ "codeRepository": "https://github.com/abdani/Donat-Screen"
+}
+</script>
+<style>
+  :root { --bg:#0b0b10; --surface:rgba(255,255,255,.045); --line:rgba(255,255,255,.10); --text:#f2f2f7; --muted:#a8a8bb;
+          --a1:#e5484d; --a2:#ff8a3d; --grad:linear-gradient(135deg,var(--a1),var(--a2)); }
+  * { box-sizing:border-box } html { scroll-behavior:smooth }
+  body { margin:0; color:var(--text); font:16px/1.65 "Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,sans-serif;
+         background: radial-gradient(1100px 650px at 8% -10%, color-mix(in srgb, var(--a1) 30%, transparent), transparent 60%),
+                     radial-gradient(900px 650px at 100% 35%, color-mix(in srgb, var(--a2) 24%, transparent), transparent 60%), var(--bg); }
+  a { color: color-mix(in srgb, var(--a1) 70%, white) }
+  .wrap { max-width:1120px; margin:0 auto; padding:0 20px }
+  nav { position:sticky; top:0; z-index:10; backdrop-filter:blur(14px); background:rgba(11,11,16,.62); border-bottom:1px solid var(--line) }
+  nav .wrap { display:flex; align-items:center; gap:22px; height:60px }
+  nav .brand { display:flex; align-items:center; gap:10px; font-weight:700; color:var(--text); text-decoration:none; margin-right:auto }
+  nav .brand img { height:28px }
+  nav a.link { color:var(--muted); text-decoration:none; font-weight:600; font-size:.95rem } nav a.link:hover { color:var(--text) }
+  header { text-align:center; padding:70px 0 20px }
+  header .logo { height:104px }
+  h1 { font-size:clamp(2.3rem,6vw,4rem); line-height:1.06; margin:16px 0 14px; letter-spacing:-.03em }
+  h1 span { background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent }
+  .lead { font-size:1.2rem; color:var(--muted); max-width:700px; margin:0 auto 24px }
+  .chips { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:28px }
+  .chips span { border:1px solid var(--line); background:var(--surface); border-radius:999px; padding:6px 14px; font-size:.9rem; font-weight:600 }
+  .cta { display:flex; gap:12px; justify-content:center; flex-wrap:wrap }
+  .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 24px; border-radius:999px; font-weight:700; text-decoration:none;
+         border:1px solid var(--line); color:var(--text); background:var(--surface); transition:transform .15s }
+  .btn:hover { transform:translateY(-2px) }
+  .btn.primary { background:var(--grad); border-color:transparent; color:#fff; box-shadow:0 10px 30px color-mix(in srgb, var(--a1) 45%, transparent) }
+  .note { color:var(--muted); font-size:.88rem; margin-top:14px }
+  .hero { display:block; width:100%; margin:38px auto 0; border-radius:18px; box-shadow:0 40px 100px rgba(0,0,0,.55) }
+  section { padding:72px 0 }
+  h2 { font-size:clamp(1.7rem,3.4vw,2.3rem); margin:0 0 10px; text-align:center; letter-spacing:-.02em }
+  .sub { color:var(--muted); text-align:center; margin:0 auto 36px; max-width:680px }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:18px }
+  .card { background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:24px }
+  .card .ico { font-size:1.7rem } .card h3 { margin:8px 0 6px; font-size:1.1rem } .card p { margin:0; color:var(--muted); font-size:.96rem }
+  .feature { display:grid; grid-template-columns:1fr 1.4fr; gap:36px; align-items:center; margin-bottom:64px }
+  .feature.flip { grid-template-columns:1.4fr 1fr } .feature.flip .text { order:2 }
+  .feature h3 { font-size:1.55rem; margin:0 0 10px } .feature p { color:var(--muted); margin:0 }
+  .feature img { width:100%; border-radius:14px; display:block; box-shadow:0 24px 70px rgba(0,0,0,.5) }
+  .feature img.tall { max-width:380px; margin:0 auto }
+  .kicker { color:color-mix(in srgb, var(--a1) 65%, white); font-weight:800; font-size:.8rem; letter-spacing:.12em; text-transform:uppercase }
+  .dl { max-width:720px; margin:0 auto; text-align:center; background:var(--surface); border:1.5px solid transparent; border-radius:22px; padding:34px;
+        background:linear-gradient(#141420,#141420) padding-box, var(--grad) border-box }
+  .dl .file { font-family:ui-monospace,Consolas,monospace; color:var(--muted); margin:6px 0 22px }
+  code { background:rgba(255,255,255,.08); padding:1px 6px; border-radius:6px; font-size:.9em }
+  details { background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:16px 20px; margin-bottom:12px }
+  summary { cursor:pointer; font-weight:700 } details p { color:var(--muted); margin:10px 0 0 }
+  footer { border-top:1px solid var(--line); padding:30px 0 46px; color:var(--muted); font-size:.9rem; text-align:center }
+  @media (max-width:820px) { .feature,.feature.flip { grid-template-columns:1fr } .feature.flip .text { order:0 } nav a.link { display:none } }
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="#"><img src="images/icon.png" alt="">Donat Screen</a>
+  <a class="link" href="#features">Features</a>
+  <a class="link" href="#tour">Tour</a>
+  <a class="link" href="#download">Download</a>
+  <a class="link" href="#faq">FAQ</a>
+  <a class="link" href="https://github.com/abdani/Donat-Screen">GitHub</a>
+</div></nav>
+
+<header class="wrap">
+  <img class="logo" src="images/icon.png" alt="Donat Screen icon">
+  <h1>Snap. Pick a folder. <span>Done.</span></h1>
+  <p class="lead">A tiny Windows screenshot tool with fully customizable save folders. Press a hotkey, pick an area — it is on your clipboard at once. In a hurry? Press <kbd>Esc</kbd> to save to your default folder.</p>
+  <div class="chips"><span>⚡ ~100 KB, one exe</span><span>📋 Clipboard first</span><span>🗂️ Several save folders</span><span>🔒 No internet, no telemetry</span></div>
+  <div class="cta">
+    <a class="btn primary" href="#download">⬇ Download for Windows</a>
+    <a class="btn" href="https://github.com/abdani/Donat-Screen">View on GitHub</a>
+  </div>
+  <p class="note">Version 1.1.0 · Windows 10 / 11 · Free &amp; open source (MIT)</p>
+  <img class="hero" src="images/hero.png" alt="Donat Screen">
+</header>
+
+<section id="features" class="wrap">
+  <h2>Small app, thoughtful details</h2>
+  <p class="sub">Everything a daily screenshot tool needs — and nothing that gets in the way.</p>
+  <div class="grid">
+    <div class="card"><div class="ico">⌨️</div><h3>Two hotkeys</h3><p><kbd>Ctrl+Shift+2</kbd> for an area, <kbd>Ctrl+Shift+1</kbd> for every monitor. Both can be changed, Win combinations too.</p></div>
+    <div class="card"><div class="ico">🎯</div><h3>Frozen-screen picker</h3><p>The screen freezes and dims; drag to select with the size shown, click for a whole monitor. Menus and tooltips are captured.</p></div>
+    <div class="card"><div class="ico">📋</div><h3>Clipboard first</h3><p>Every shot is on the clipboard before anything else — as a bitmap for Office and chat, as PNG for browsers.</p></div>
+    <div class="card"><div class="ico">💾</div><h3>Save where you want</h3><p>A quick popup with preview, file name and your folders to tick. Or skip it and save straight to the ★ folder.</p></div>
+    <div class="card"><div class="ico">🛡️</div><h3>Never overwrites</h3><p>Existing names get a number. Shortcuts Windows or other apps already use are refused when you record them.</p></div>
+    <div class="card"><div class="ico">🎒</div><h3>Truly portable</h3><p>One exe, settings in an ini next to it, works from a USB stick. Light/dark theme, English or Bahasa Indonesia.</p></div>
+  </div>
+</section>
+
+<section id="tour" class="wrap">
+  <h2>Take the tour</h2>
+  <p class="sub">Clean, native Windows windows that follow your light or dark theme.</p>
+  <div class="feature">
+    <div class="text"><div class="kicker">Settings</div><h3>Your folders, your shortcuts</h3><p>Keep a list of save folders, star the default, choose which ones the popup offers, and record new shortcuts — clashes are refused with a clear reason.</p></div>
+    <img src="images/settings.png" alt="Settings window" loading="lazy" class=tall>
+  </div>
+  <div class="feature flip">
+    <img src="images/save-dialog.png" alt="Save popup" loading="lazy" class=tall>
+    <div class="text"><div class="kicker">Save popup</div><h3>Name it, tick folders, Enter</h3><p>A preview, a file name to edit and the folders to tick — one or several. Enter saves; Esc saves to the default folder with an automatic name.</p></div>
+  </div>
+  <div class="feature">
+    <div class="text"><div class="kicker">Safe shortcuts</div><h3>No clashes with Windows</h3><p>While you record a shortcut, Windows' own combinations, keys held by other apps and risky single-modifier combos are refused.</p></div>
+    <img src="images/recording.png" alt="Recording a shortcut" loading="lazy" class=tall>
+  </div>
+  <div class="feature flip">
+    <img src="images/overlay-hint.png" alt="Area picker hint" loading="lazy">
+    <div class="text"><div class="kicker">Area picker</div><h3>Freeze, drag, done</h3><p>The whole desktop freezes the moment you press the hotkey, so menus and tooltips stay put. Works across monitors with different scaling.</p></div>
+  </div>
+</section>
+
+<section id="download" class="wrap">
+  <div class="dl">
+    <h2>Download Donat Screen 1.1.0</h2>
+    <div class="file">DonatScreen.exe · 100 KB</div>
+    <a class="btn primary" href="https://github.com/abdani/Donat-Screen/releases/latest/download/DonatScreen.exe">⬇ Download</a>
+    <p class="note">Windows 10 / 11 · .NET Framework 4.8 is already part of Windows. Not code-signed yet: if SmartScreen appears, choose <b>More info → Run anyway</b>.</p>
+  </div>
+  <h2 style="margin-top:60px">Get started</h2>
+  <div class="grid" style="margin-top:26px">
+    <div class="card"><div class="ico">①</div><h3>Download</h3><p>Get <code>DonatScreen.exe</code> and put it in any folder — or on a USB stick.</p></div>
+    <div class="card"><div class="ico">②</div><h3>Run it once</h3><p>Settings opens: pick your save folders and shortcuts. The app then waits in the tray.</p></div>
+    <div class="card"><div class="ico">③</div><h3>Capture</h3><p>Press <kbd>Ctrl+Shift+2</kbd> and drag over an area. Paste it anywhere, or choose where to save it.</p></div>
+  </div>
+</section>
+
+<section id="faq" class="wrap">
+  <h2>Questions</h2>
+  <p class="sub">&nbsp;</p>
+  <details><summary>Do I need to install anything?</summary><p>No. Donat Screen is a single ~100 KB exe; the .NET Framework it uses is built into Windows 10 and 11. Settings are kept in <code>DonatScreen.ini</code> next to the exe.</p></details>
+  <details><summary>Does it go online?</summary><p>Never — no updates, no telemetry. Screenshots only go to the clipboard and the folders you choose.</p></details>
+  <details><summary>Why are some games black?</summary><p>Exclusive full-screen DirectX games can come out black, because the capture uses the regular Windows desktop.</p></details>
+  <details><summary>Can it start with Windows?</summary><p>Yes: turn on <b>Start with Windows</b>. It starts quietly in the tray, no admin rights needed.</p></details>
+</section>
+
+<footer><div class="wrap">
+  Donat Screen is free and open source · <a href="https://github.com/abdani/Donat-Screen">github.com/abdani/Donat-Screen</a><br>
+  More apps by <a href="https://abdani.github.io/">Dani Abdani</a> · © 2026 · MIT License
+</div></footer>
+</body>
+</html>

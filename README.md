@@ -5,8 +5,8 @@
 <h1 align="center">Donat Screen</h1>
 
 <p align="center">
-  A tiny Windows screenshot tool with fully customizable save folders.
-  Snap. Pick a folder. Done.
+  A tiny Windows screenshot tool with fully customizable save folders.<br>
+  <b>Snap. Pick a folder. Done.</b>
 </p>
 
 <p align="center">

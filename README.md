@@ -34,13 +34,13 @@
 
 ## Screenshots
 
-| Area picker | Save popup |
+| Save popup | Recording a shortcut: Windows' own ones are refused |
 | --- | --- |
-| ![Area picker](docs/images/overlay.png) | ![Save popup](docs/images/save-dialog.png) |
+| ![Save popup](docs/images/save-dialog.png) | ![Recording a shortcut](docs/images/recording.png) |
 
-| The hint when the picker opens | Recording a shortcut: Windows' own ones are refused |
-| --- | --- |
-| ![Area picker hint](docs/images/overlay-hint.png) | ![Recording a shortcut](docs/images/recording.png) |
+When the area picker opens, the screen dims and this hint shows at the top:
+
+![Area picker hint](docs/images/overlay-hint.png)
 
 <details>
 <summary>Bahasa Indonesia</summary>

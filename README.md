@@ -109,7 +109,7 @@ Donat Screen never connects to the internet: no updates, no telemetry. Screensho
 
 Left-click the tray icon for Settings; right-click it for the capture commands, the default folder and **Quit**. Click the notification after a save to show the file in Explorer.
 
-Windows SmartScreen may warn about an unknown publisher on the first launch, because the exe isn't code-signed. Choose **More info → Run anyway**.
+⚠️ Windows SmartScreen may warn about an unknown publisher on the first launch, because the exe isn't code-signed. Choose **More info → Run anyway**.
 
 **Known limit:** exclusive full-screen DirectX games can come out black, since the capture uses the regular desktop (GDI).
 

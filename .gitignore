@@ -1,0 +1,7 @@
+# build output (the exe goes to GitHub Releases); build\ also holds a personal DonatScreen.ini
+bin/
+obj/
+build/
+
+# personal notes
+CLAUDE.local.md

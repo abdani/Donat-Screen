@@ -142,6 +142,18 @@ dotnet build -c Release -o build    # -> build\DonatScreen.exe
 
 `test.ps1` first checks that every UI text has an English translation. It then runs the real exe and presses the hotkeys, drags the mouse, records shortcuts, and pastes into Word and Edge. It takes over the keyboard and mouse for about a minute, and only sends input while a Donat Screen window is in front. The Edge paste needs Python with [Playwright](https://playwright.dev/python/); the Word paste is skipped when Word isn't installed.
 
+## Built with
+
+| Component | Purpose | License |
+| --- | --- | --- |
+| C# on [.NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48) + Windows Forms | The app, its windows and PNG encoding | Part of Windows 10/11 (Microsoft) |
+| Win32 `RegisterHotKey`, `SetWindowsHookEx` | Global capture hotkeys and recording a new shortcut | Windows API |
+| GDI `BitBlt` | Capturing the screen across all monitors, including tooltips and menus | Windows API |
+| DWM `DwmSetWindowAttribute`, `SetWindowTheme` | Dark title bars and scrollbars | Windows API |
+| Shell `IFileDialog`, `ExtractIconEx` | The modern Windows folder picker and the sharp tray icon | Windows API |
+
+No third-party libraries and no NuGet packages: everything comes with Windows, so the exe stays ~100 KB.
+
 ## License
 
 [MIT](LICENSE) © 2026 Dani Abdani
